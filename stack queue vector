@@ -1,0 +1,11 @@
+스택과 벡터는 같은 기능이지만 스택을 사용하면 후입선출이구나 하고 가독성을 증가시킨다
+#include<queue>은 선입선출
+queue<int> q;
+q.pop() 앞의 원소 제거
+q.empty() 비어있으면 1반환
+q.push(x) 맨뒤에 x 삽입
+q.size() q의 원소 갯수 반환
+
+stack<int> s;
+q.pop() 맨 뒤의 원소 제거
+q.push(x) 맨뒤에 x 삽입
