@@ -1,0 +1,14 @@
+#include<list>
+list <int>::iterator L_Iter; // 목록에 있는 모든 요소를 읽거나 수정할 수 있는 양방향 반복기
+list<int> L;
+
+
+L.push_front(0);
+L.push_back(10);
+L_Iter = L.end()--;
+cout << *L_Iter<<endl;
+L.insert(L_Iter, 3); // L_Iter자리에 3삽입
+L.erase(--L_Iter); // L_Iter-1 자리를 제거
+L.remove(2) // 값이 2인 노드제거
+L.unique() //인접하는 중복요소 제거
+L.merger( L2) // 요소를 인수 목록에서 제거하고 대상 목록에 삽입한 다음 새로 조합된 요소 집합을 오름차순 정렬
