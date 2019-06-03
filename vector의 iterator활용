@@ -1,0 +1,23 @@
+bool comp(string& s1, string& s2) {
+    if (s1.size() == s2.size())return s1 < s2;
+    else return s1.size() < s2.size();
+}
+int main(){
+    string s;
+    vector<string> S;
+    vector<string>::iterator end_iter, iter;
+    int n; cin >> n;
+    while (n--) {
+        cin >> s;
+        S.push_back(s);
+    }
+1.    sort(S.begin(), S.end(),comp);
+    end_iter=unique(S.begin(), S.end()); //unique함수는 중복값을 벡터맨뒤의 쓰레기값에 저장하고 쓰레기값의 첫번쨰 원소를 반환
+    for (iter = S.begin(); iter != end_iter; iter++)
+        cout << *iter<<'\n';
+}
+2.
+sort(S.begin(), S.end(), comp);
+    S.erase(unique(S.begin(), S.end()),S.end());
+    for (int i = 0; i < S.size(); i++)
+        cout << S[i] << '\n';
