@@ -23,7 +23,7 @@ void bfs(int x) {
 		int x = q.front(); q.pop(); // q의 맨앞을 꺼냄
 		cout << x << " ";
 		for (int i = 0; i < arr[x].size(); i++) {//꺼낸 정점의 간선을 탐색
-			int y = arr[x][i];
+			int y = arr[x][i];// 정점x의 i번쨰 연결된 정점
 			if (check[y] == false) {
 				check[y] = true;
 				q.push(y); //x와 연결된 아직 탐색되지않은 정점을 큐에 넣음
@@ -41,7 +41,7 @@ int main() {
 		arr[v].push_back(u); //대각선기준으로 일치하므로
 	}
 	for (int i = 1; i <= n; i++)
-		sort(arr[i].begin(), arr[i].end()); //작은순서부터 탐색하므로
+		sort(arr[i].begin(), arr[i].end()); //문제 조건이 작은순서부터 탐색하므로
 	dfs(start);
 	cout << endl;
 	memset(check, 0, 1001);
