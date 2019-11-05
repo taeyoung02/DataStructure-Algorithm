@@ -1,0 +1,21 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int n, m;
+void BT(int k, int *arr, int* used) {
+    if (k == m) {
+        for (int i = 0; i < m; i++)cout << arr[i] << " ";
+        cout << '\n';
+        return;
+    }
+    else {
+        for (int i = 0; i < n; i++) {
+            if (!used[i]) {//방문안했으면
+                arr[k] = i + 1;//방문
+                used[i] = 1;//방문했다고 표시
+                BT(k + 1, arr, used);/*한 단계 더 들어감
+                used[i] = 0; //k=m이 되어 출력후 방문표시 지워도 바로 다음에 for문에서 i는 1이 증가되어있어 전의 i를 방문할수없다
+끝까지 내려갔다 다시 위로올라오며 표시가 지워짐*/
+            }
+        }
+    }
